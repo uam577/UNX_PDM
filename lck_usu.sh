@@ -63,8 +63,8 @@ export SSH=/usr/bin/ssh
  
 # export VAR1=valor1  # Definicion de la variable
 export FICH_MAQ="/path/admin/config/servidores/" # Fichero por defecto del que se van a tomar las maquinas.
-export MAQUINAS=""           # Maquinas sobre las que se actuara
-export USUARIOS=""           # Usuarios sobre los que se actuara
+export MAQUINAS="" # Maquinas sobre las que se actuara
+export USUARIOS="" # Usuarios sobre los que se actuara
  
 # DEFINICION DE FUNCIONES UTILIZADAS POR EL SCRIPT
 ##########################################################################
