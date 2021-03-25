@@ -2,7 +2,7 @@
 ################################################################
 #                                                              #
 # Script para obtener datos de usuarios locales                #
-#							                                                 #
+#							                                                       #
 #  DESARROLLADO POR: uam577                                    #
 #  FECHA: 2021                                                 #           
 #                                                              #
@@ -27,7 +27,7 @@ fi # if UID=""
 echo
 echo
 echo "Buscando usuarios locales con UID \"$UID\" en maquinas...\c"
-for i in `/usr/bin/cat /path/admin/config/servidores/ | egrep -v ^# | awk -F: '{print$1}'`; do
+for i in `/usr/bin/cat /path/admin/config/servidores/ | egrep -v ^ | awk -F: '{print$1}'`; do
         echo ".\c"
         RLINEA=`ssh $i -n "/bin/cat /etc/passwd | /bin/awk -F: '{print\\$1,\\$3,\\$4}' | /bin/egrep '"^$UID "|" $UID$"'" 2>/dev/null`
  
