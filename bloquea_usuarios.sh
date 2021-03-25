@@ -3,7 +3,7 @@
 #
 #  NOMBRE DEL SCRIPT: bloquea_usu.sh
 #  DESARROLLADO POR: uam577
-#  FECHA: 25/10/2017
+#  FECHA: 2017
 #
 #  MODIFICADO POR:
 #  FECHA:
@@ -60,9 +60,9 @@ export SSH=/usr/bin/ssh
 ##########################################################################
  
 # export VAR1=valor1  # Definicion de la variable
-export FICH_MAQ="/SD/scrges/admin/config/servidores/" # Fichero por defecto del que se van a tomar las maquinas.
-export MAQUINAS=""           # Maquinas sobre las que se actuara
-export USUARIOS=""               # Usuarios sobre los que se actuara
+export FICH_MAQ="/scrges/admin/config/servidores/"    # Fichero por defecto del que se van a tomar las maquinas.
+export MAQUINAS=""    # Maquinas sobre las que se actuara
+export USUARIOS=""    # Usuarios sobre los que se actuara
  
 # DEFINICION DE FUNCIONES UTILIZADAS POR EL SCRIPT
 ##########################################################################
@@ -73,7 +73,7 @@ export USUARIOS=""               # Usuarios sobre los que se actuara
 #
 #  NOMBRE DE LA FUNCION: usage()
 #  DESARROLLADO POR: uam577
-#  FECHA: 21/09/2017
+#  FECHA: 2017
 #
 #  DESCRIPCION:
 #  Saca por pantalla el usage del script ante un error en la invocacion.
@@ -91,16 +91,16 @@ function usage {
  
         $ECHO "USAGE: $0 <Servidor>|<Fichero_Servidores>|"HPUX"|"SOLARIS"|"RHEL"|"ALL"   <Usuario>|<Fichero_Usuarios> "
     $ECHO ""
-        $ECHO "  Ambito en el que se van a bloquear los usuarios, puede ser:"
-    $ECHO "     Una maquina: <Servidor>"
-    $ECHO "     Un fichero conteniendo un grupo de maquinas <Fichero_Servidores>"
-        $ECHO "       En este caso el fichero contendra unicamente el nombre o IP de un servidor por lmnea."
-    $ECHO '     Una especificacisn de SO: "HPUX", "SOLARIS" o "RHEL" '
-    $ECHO '     Toda la plataforma: "ALL" '
-        $ECHO "  Usuario o usuarios a bloquear, puede ser:"
-    $ECHO "     Un usuario: <Usuario>"
-    $ECHO "     Un fichero conteniendo un grupo de usuarios: <Fichero_Usuarios>"
-        $ECHO "       En este caso el fichero contendra unicamente el nombre o ID de un usuario por lmnea."
+        $ECHO "Ambito en el que se van a bloquear los usuarios, puede ser:"
+    $ECHO "Una maquina: <Servidor>"
+    $ECHO "Un fichero conteniendo un grupo de maquinas <Fichero_Servidores>"
+        $ECHO "En este caso el fichero contendra unicamente el nombre o IP de un servidor por linea."
+    $ECHO 'Una especificacisn de SO: "HPUX", "SOLARIS" o "RHEL" '
+    $ECHO 'Toda la plataforma: "ALL" '
+        $ECHO "Usuario o usuarios a bloquear, puede ser:"
+    $ECHO "Un usuario: <Usuario>"
+    $ECHO "Un fichero conteniendo un grupo de usuarios: <Fichero_Usuarios>"
+        $ECHO "En este caso el fichero contendra unicamente el nombre o ID de un usuario por linea."
         exit 1
  
 } #function usage ()
@@ -109,7 +109,7 @@ function usage {
 #
 #  NOMBRE DE LA FUNCION: respuesta()
 #  DESARROLLADO POR: uam577
-#  FECHA: 2/07/2013
+#  FECHA: 2017
 #
 #  DESCRIPCION:
 #  Recibe por pantalla la respuesta del usuario. Si no es s, si, sI, S, Si
