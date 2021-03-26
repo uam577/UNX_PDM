@@ -1,2 +1,2 @@
 # UNX_PDM
-Project Data Management for Unix Systems.
+PDM for Unix Systems.
