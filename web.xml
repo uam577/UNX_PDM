@@ -1,0 +1,44 @@
+<web-app>
+    <display-name>Simple Test Servlet (Basic Auth)</display-name>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>BasicAuthSimpleTestServlet</web-resource-name>
+            <url-pattern>/*</url-pattern>
+            <url-pattern>/</url-pattern>
+            <http-method>POST</http-method>
+            <http-method>GET</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>negotiateAdminRole</role-name>
+        </auth-constraint>
+        <user-data-constraint>
+            <description>no description</description>
+            <transport-guarantee>NONE</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+
+    <security-role>
+        <role-name>negotiateAdminRole</role-name>
+    </security-role>
+
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <realm-name>default</realm-name>
+    </login-config>
+
+    <servlet>
+        <servlet-name>BasicAuthSimpleTestServlet</servlet-name>
+        <servlet-class>wlstest.functional.security.negotiate.servlet.SimpleTestServlet</servlet-class>
+    </servlet>
+
+    <welcome-file-list>
+        <welcome-file>/BasicAuthSimpleTestServlet</welcome-file>
+    </welcome-file-list>
+
+    <servlet-mapping>
+        <servlet-name>BasicAuthSimpleTestServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+</web-app>
